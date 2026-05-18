@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/minio/pkg/v3/certs"
+	"github.com/buckit-io/pkg/v3/certs"
 )
 
 func updateCerts(crt, key string) {

@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/minio/minio-go/v7/pkg/set"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
 )
 
 // ActionSet - set of actions.

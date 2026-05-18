@@ -18,7 +18,7 @@
 package policy
 
 import (
-	"github.com/minio/pkg/v3/policy/condition"
+	"github.com/buckit-io/pkg/v3/policy/condition"
 )
 
 // TableAction - S3 Tables policy action.

@@ -23,9 +23,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/minio/minio-go/v7/pkg/s3utils"
-	"github.com/minio/minio-go/v7/pkg/set"
-	"github.com/minio/pkg/v3/wildcard"
+	"github.com/buckit-io/minio-go/v7/pkg/s3utils"
+	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/buckit-io/pkg/v3/wildcard"
 )
 
 func substitute(values map[string][]string) func(string) string {

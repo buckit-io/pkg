@@ -1,4 +1,4 @@
-module github.com/minio/pkg/v3
+module github.com/buckit-io/pkg/v3
 
 go 1.25.0
 
@@ -19,7 +19,6 @@ require (
 	github.com/lestrrat-go/jwx/v3 v3.0.12
 	github.com/mattn/go-colorable v0.1.14
 	github.com/mattn/go-isatty v0.0.20
-	github.com/minio/minio-go/v7 v7.0.97
 	github.com/minio/mux v1.8.2
 	github.com/rjeczalik/notify v0.9.3
 	github.com/tinylib/msgp v1.6.3
@@ -67,6 +66,7 @@ require (
 	github.com/bombsimon/wsl/v5 v5.6.0 // indirect
 	github.com/breml/bidichk v0.3.3 // indirect
 	github.com/breml/errchkjson v0.4.1 // indirect
+	github.com/buckit-io/minio-go/v7 v7.0.0-20260518233947-e88e1acf1753 // indirect
 	github.com/butuzov/ireturn v0.4.0 // indirect
 	github.com/butuzov/mirror v1.3.0 // indirect
 	github.com/catenacyber/perfsprint v0.10.1 // indirect
@@ -137,6 +137,8 @@ require (
 	github.com/karamaru-alpha/copyloopvar v1.2.2 // indirect
 	github.com/kisielk/errcheck v1.10.0 // indirect
 	github.com/kkHAIKE/contextcheck v1.1.6 // indirect
+	github.com/klauspost/compress v1.18.2 // indirect
+	github.com/klauspost/crc32 v1.3.0 // indirect
 	github.com/kulti/thelper v0.7.1 // indirect
 	github.com/kunwardeep/paralleltest v1.0.15 // indirect
 	github.com/lasiar/canonicalheader v1.1.2 // indirect
@@ -160,6 +162,7 @@ require (
 	github.com/maratori/testpackage v1.1.2 // indirect
 	github.com/matoous/godox v1.1.0 // indirect
 	github.com/mgechev/revive v1.15.0 // indirect
+	github.com/minio/crc64nvme v1.1.1 // indirect
 	github.com/minio/md5-simd v1.1.2 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
@@ -184,6 +187,7 @@ require (
 	github.com/raeperd/recvcheck v0.2.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/rogpeppe/go-internal v1.14.1 // indirect
+	github.com/rs/xid v1.6.0 // indirect
 	github.com/ryancurrah/gomodguard v1.4.1 // indirect
 	github.com/ryanrolds/sqlclosecheck v0.6.0 // indirect
 	github.com/sanposhiho/wastedassign/v2 v2.1.0 // indirect
