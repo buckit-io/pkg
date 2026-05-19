@@ -293,7 +293,7 @@ func (m *Manager2) GetAllCertificates() []*x509.Certificate {
 	certs := m.certs.Load()
 	result := make([]*x509.Certificate, 0, len(*certs))
 	for i := range *certs {
-		c := *((*certs)[i].Load())
+		c := *(*certs)[i].Load()
 		if c.Leaf != nil {
 			cert, err := x509.ParseCertificate(c.Leaf.Raw)
 			if err != nil {

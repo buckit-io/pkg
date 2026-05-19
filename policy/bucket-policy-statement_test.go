@@ -27,7 +27,8 @@ import (
 )
 
 func TestBPStatementIsAllowed(t *testing.T) {
-	case1Statement := NewBPStatement("",
+	case1Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(GetBucketLocationAction, PutObjectAction),
@@ -35,7 +36,8 @@ func TestBPStatementIsAllowed(t *testing.T) {
 		condition.NewFunctions(),
 	)
 
-	case2Statement := NewBPStatement("",
+	case2Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(GetObjectAction, PutObjectAction),
@@ -55,7 +57,8 @@ func TestBPStatementIsAllowed(t *testing.T) {
 		t.Fatalf("unexpected error. %v\n", err)
 	}
 
-	case3Statement := NewBPStatement("",
+	case3Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(GetObjectAction, PutObjectAction),
@@ -63,7 +66,8 @@ func TestBPStatementIsAllowed(t *testing.T) {
 		condition.NewFunctions(func1),
 	)
 
-	case4Statement := NewBPStatement("",
+	case4Statement := NewBPStatement(
+		"",
 		Deny,
 		NewPrincipal("*"),
 		NewActionSet(GetObjectAction, PutObjectAction),
@@ -292,7 +296,8 @@ func TestBPStatementIsValid(t *testing.T) {
 		expectErr bool
 	}{
 		// Invalid effect error.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Effect("foo"),
 			NewPrincipal("*"),
 			NewActionSet(GetBucketLocationAction, PutObjectAction),
@@ -300,7 +305,8 @@ func TestBPStatementIsValid(t *testing.T) {
 			condition.NewFunctions(),
 		), true},
 		// Invalid principal error.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Allow,
 			NewPrincipal(),
 			NewActionSet(GetBucketLocationAction, PutObjectAction),
@@ -308,7 +314,8 @@ func TestBPStatementIsValid(t *testing.T) {
 			condition.NewFunctions(),
 		), true},
 		// Empty actions error.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Allow,
 			NewPrincipal("*"),
 			NewActionSet(),
@@ -316,7 +323,8 @@ func TestBPStatementIsValid(t *testing.T) {
 			condition.NewFunctions(),
 		), true},
 		// Empty resources error.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Allow,
 			NewPrincipal("*"),
 			NewActionSet(GetBucketLocationAction, PutObjectAction),
@@ -324,7 +332,8 @@ func TestBPStatementIsValid(t *testing.T) {
 			condition.NewFunctions(),
 		), true},
 		// Unsupported resource found for object action.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Allow,
 			NewPrincipal("*"),
 			NewActionSet(GetBucketLocationAction, PutObjectAction),
@@ -332,7 +341,8 @@ func TestBPStatementIsValid(t *testing.T) {
 			condition.NewFunctions(),
 		), true},
 		// Unsupported resource found for bucket action.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Allow,
 			NewPrincipal("*"),
 			NewActionSet(GetBucketLocationAction, PutObjectAction),
@@ -340,14 +350,16 @@ func TestBPStatementIsValid(t *testing.T) {
 			condition.NewFunctions(),
 		), true},
 		// Unsupported condition key for action.
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Allow,
 			NewPrincipal("*"),
 			NewActionSet(GetObjectAction, PutObjectAction),
 			NewResourceSet(NewResource("mybucket/myobject*")),
 			condition.NewFunctions(func1, func2),
 		), true},
-		{NewBPStatement("",
+		{NewBPStatement(
+			"",
 			Deny,
 			NewPrincipal("*"),
 			NewActionSet(GetObjectAction, PutObjectAction),
@@ -362,7 +374,8 @@ func TestBPStatementIsValid(t *testing.T) {
 			Resources:  NewResourceSet(NewResource("mybucket/myobject*")),
 			Conditions: condition.NewFunctions(),
 		}, false},
-		{NewBPStatementWithNotResource("",
+		{NewBPStatementWithNotResource(
+			"",
 			Allow,
 			NewPrincipal("*"),
 			NewActionSet(GetObjectAction, PutObjectAction),
@@ -389,7 +402,8 @@ func TestBPStatementUnmarshalJSONAndValidate(t *testing.T) {
     "Action": "s3:PutObject",
     "Resource": "arn:aws:s3:::mybucket/myobject*"
 }`)
-	case1Statement := NewBPStatement("",
+	case1Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(PutObjectAction),
@@ -416,7 +430,8 @@ func TestBPStatementUnmarshalJSONAndValidate(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error. %v\n", err)
 	}
-	case2Statement := NewBPStatement("",
+	case2Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(PutObjectAction),
@@ -447,7 +462,8 @@ func TestBPStatementUnmarshalJSONAndValidate(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error. %v\n", err)
 	}
-	case3Statement := NewBPStatement("",
+	case3Statement := NewBPStatement(
+		"",
 		Deny,
 		NewPrincipal("*"),
 		NewActionSet(PutObjectAction, GetObjectAction),
@@ -592,7 +608,8 @@ func TestBPStatementUnmarshalJSONAndValidate(t *testing.T) {
 }
 
 func TestBPStatementValidate(t *testing.T) {
-	case1Statement := NewBPStatement("",
+	case1Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(PutObjectAction),
@@ -614,7 +631,8 @@ func TestBPStatementValidate(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error. %v\n", err)
 	}
-	case2Statement := NewBPStatement("",
+	case2Statement := NewBPStatement(
+		"",
 		Allow,
 		NewPrincipal("*"),
 		NewActionSet(GetObjectAction, PutObjectAction),

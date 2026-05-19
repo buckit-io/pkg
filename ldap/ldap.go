@@ -387,7 +387,8 @@ func LookupDN(conn *ldap.Conn, dn string, attrs []string) (*DNSearchResult, erro
 	if len(searchResult.Entries) != 1 {
 		return nil, fmt.Errorf(
 			"multiple DNs found for %s - this should not happen for a base object search",
-			dn)
+			dn,
+		)
 	}
 
 	foundDistName, err := NormalizeDN(searchResult.Entries[0].DN)

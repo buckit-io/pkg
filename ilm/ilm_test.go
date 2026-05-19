@@ -22,9 +22,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
 	"github.com/dustin/go-humanize"
 	"github.com/go-openapi/swag/conv"
-	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
 )
 
 func TestOptionFilter(t *testing.T) {

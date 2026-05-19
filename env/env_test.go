@@ -71,7 +71,8 @@ func TestWebEnv(t *testing.T) {
 	v, user, pwd, err := getEnvValueFromHTTP(
 		fmt.Sprintf("env://minio:minio123@%s/webhook/v1/getenv/default/minio",
 			u.Host),
-		"MINIO_ARGS")
+		"MINIO_ARGS",
+	)
 	if err != nil {
 		t.Fatal(err)
 	}

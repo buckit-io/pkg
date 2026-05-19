@@ -24,8 +24,8 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/fatih/structs"
 	"github.com/buckit-io/pkg/v3/safe"
+	"github.com/fatih/structs"
 	etcd "go.etcd.io/etcd/client/v3"
 )
 

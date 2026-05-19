@@ -22,8 +22,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/go-ldap/ldap/v3"
 	"github.com/buckit-io/minio-go/v7/pkg/set"
+	"github.com/go-ldap/ldap/v3"
 )
 
 // Result - type for high-level names for the validation status of the config.

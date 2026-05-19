@@ -117,7 +117,8 @@ var DefaultPolicies = []struct {
 				{
 					SID:    ID(""),
 					Effect: Allow,
-					Actions: NewActionSet(ProfilingAdminAction,
+					Actions: NewActionSet(
+						ProfilingAdminAction,
 						TraceAdminAction, ConsoleLogAdminAction,
 						ServerInfoAdminAction, TopLocksAdminAction,
 						HealthInfoAdminAction, BandwidthMonitorAction,

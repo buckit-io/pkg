@@ -163,7 +163,8 @@ func NewServer(options *Options) (sftpServer *Server, err error) {
 
 // Listen starts the SFTP server
 func (s *Server) Listen() (err error) {
-	s.logger.Info(ServerStarted,
+	s.logger.Info(
+		ServerStarted,
 		"SFTP Server listening on "+
 			net.JoinHostPort(s.publicIP, strconv.Itoa(s.port)),
 	)

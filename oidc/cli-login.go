@@ -22,8 +22,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/golang-jwt/jwt/v4"
 	"github.com/buckit-io/minio-go/v7/pkg/credentials"
+	"github.com/golang-jwt/jwt/v4"
 )
 
 // CLILoginClaims holds the claims for CLI login tokens.
