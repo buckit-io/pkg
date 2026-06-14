@@ -11,7 +11,7 @@ Packages are scoped by capability at the repo root (for example `policy`, `ldap`
 Run these commands before opening a pull request; they mirror the CI stack.
 
 ## Coding Style & Naming Conventions
-Always format Go sources with `gofmt`/`goimports`. Follow the CLAUDE guidance from `miniohq/eos`: keep comments minimal, explaining **why** the code exists, never **what**, and do not leave “removed because” notes when deleting code. Use descriptive package names that mirror directory names and exported identifiers with GoDoc-ready sentences. Stick to tab-indented Go style and avoid introducing logging or HTTP helpers that bypass established patterns in sibling MinIO repos without prior discussion.
+Always format Go sources with `gofmt`/`goimports`. Keep comments minimal, explaining **why** the code exists, never **what**, and do not leave “removed because” notes when deleting code. Use descriptive package names that mirror directory names and exported identifiers with GoDoc-ready sentences. Stick to tab-indented Go style and avoid introducing logging or HTTP helpers that bypass established patterns in sibling buckit-io repos without prior discussion.
 
 ## Testing Guidelines
 Write focused unit tests in `_test.go` files and organize table-driven tests for edge cases (credentials, policy evaluation, network fallbacks). Include subtests for protocol-specific behavior. Always run `make test`; add targeted benchmarks (`go test -bench`) when optimizing hot paths and share before/after numbers in review.

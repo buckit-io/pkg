@@ -1,5 +1,25 @@
 # pkg
-Collection of common packages used in MinIO projects.
 
-# License
-Use of this package `pkg` is governed by the GNU AGPLv3 license that can be found in the [LICENSE](https://github.com/minio/pkg/blob/master/LICENSE) file.
+Shared utility library for [Buckit](https://github.com/buckit-io/buckit) and related Go projects.
+
+Module path: `github.com/buckit-io/pkg/v3`
+
+## Packages
+
+Policy, LDAP, console output, certificates, environment helpers, CORS, OIDC utilities, and other shared primitives used across the Buckit-io Go stack.
+
+## Consumers
+
+- `buckit` server
+- `bm` manager
+- `bm-cli`
+- `console`
+- `colorjson`
+
+## Upstream
+
+Forked from [minio/pkg](https://github.com/minio/pkg). Cherry-pick security and bug fixes from upstream as needed.
+
+## License
+
+GNU AGPLv3 — see [LICENSE](LICENSE).
