@@ -26,7 +26,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/buckit-io/minio-go/v7/pkg/credentials"
+	"github.com/buckit-io/buckit-go/v7/pkg/credentials"
 )
 
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ012345"

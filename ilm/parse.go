@@ -23,7 +23,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/buckit-io/minio-go/v7/pkg/lifecycle"
+	"github.com/buckit-io/buckit-go/v7/pkg/lifecycle"
 )
 
 // Used in tags. Ex: --tags "key1=value1&key2=value2&key3=value3"
